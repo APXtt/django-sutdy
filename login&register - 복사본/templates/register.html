@@ -1,0 +1,32 @@
+<form method="post" action="{% url 'register' %}">
+    {% csrf_token %}
+    {% include "form_errors.html" %}
+    <label>username</label>
+    <input
+      name="username"
+      value="{{ form.username.value|default_if_none:'' }}"
+      type="text"
+    />
+    <br />
+    <label>password</label>
+    <input
+      type="password"
+      name="password1"
+      value="{{ form.password1.value|default_if_none:'' }}"
+    />
+    <label>re password</label>
+    <input
+      type="password"
+      name="password2"
+      value="{{ form.password2.value|default_if_none:'' }}"
+    />
+    <br />
+    <label>email</label>
+    <input
+      type="text"
+      name="email"
+      value="{{ form.email.value|default_if_none:'' }}"
+    />
+    <br />
+    <button>register</button>
+  </form>
