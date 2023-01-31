@@ -1,4 +1,7 @@
-<form method="post" action="{% url 'register' %}">
+{% extends 'base.html' %}
+{% block content %}
+
+<form method="post" action="{% url 'base:register' %}">
     {% csrf_token %}
     {% include "form_errors.html" %}
     <label>username</label>
@@ -30,3 +33,5 @@
     <br />
     <button>register</button>
   </form>
+
+{% endblock %}
