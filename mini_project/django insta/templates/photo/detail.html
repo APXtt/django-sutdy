@@ -1,0 +1,6 @@
+<p><img src="{{object.photo.url}}" alt="" /></p>
+<button type="button">{{object.text|linebreaksbr}}</button>
+<p>{{object.text|linebreaksbr}}</p>
+
+<a href="{% url 'photo:photo_delete' pk=object.id %}">Delete</a>
+<a href="{% url 'photo:photo_update' pk=object.id %}">Update</a>

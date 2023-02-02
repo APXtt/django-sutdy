@@ -1,0 +1,6 @@
+{% for post in photos %}
+<p><img src="{{post.photo.url}}" alt="" /></p>
+<p>{{post.author.username}}</p>
+<p>{{post.text|linebreaksbr}}</p>
+<a href="{% url 'photo:photo_detail' pk=post.id %}">댓글달기</a>
+{% endfor %}
